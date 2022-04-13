@@ -32,8 +32,8 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-    stock = {}
 
+    stock = {}
     stock['tornillos'] = [100]
     stock['tuercas'] = [150]
     stock['arandelas'] = [300]
