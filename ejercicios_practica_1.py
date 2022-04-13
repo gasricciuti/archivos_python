@@ -1,7 +1,7 @@
 # Archivos [Python]
 # Ejercicios de práctica
 
-# Autor: Inove Coding School
+# Autor: Gaston Ricciuti
 # Version: 2.0
 
 # IMPORTANTE: NO borrar los comentarios
@@ -32,7 +32,13 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    stock = {}
 
+    stock['tornillos'] = [100]
+    stock['tuercas'] = [150]
+    stock['arandelas'] = [300]
+
+    print('El stock es:\n', stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +46,7 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -67,6 +73,41 @@ def ej2():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+    agregar = ''
+
+    while True:
+        print('''Ingrese que producto quiere agregar al stock:
+a) tornillos
+b) tuercas
+c) arandelas
+d) fin''')
+        
+        agregar = str(input('Ingresar el producto tal cual esta escrito: '))
+        
+        if agregar  == 'tornillos':
+            print('Ingresar el stock de tornillos')
+            try:
+                stock['tornillos'] = int(input())
+            except:
+                print('Error al ingresar el stock')
+        elif agregar == 'tuercas':
+            print('Ingresar el stock tuercas')
+            try:
+                stock['tuercas'] = int(input())
+            except:
+                 print('Error al ingresar el stock')   
+        elif agregar == 'arandelas':
+            print('Ingresar el stock arandelas')
+            try:
+                stock['arandelas'] = int(input())
+            except:
+                print('Error al ingresar el stock')
+        elif agregar == 'fin':
+            print('Carga de stock finalizada')        
+        else:
+            print('Error al ingresar el stock')
+
+        print('El stock final es:\n',stock)
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
