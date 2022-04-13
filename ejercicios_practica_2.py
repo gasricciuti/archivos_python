@@ -1,7 +1,7 @@
 # Archivos [Python]
 # Ejercicios de práctica
 
-# Autor: Inove Coding School
+# Autor: Gaston Ricciuti
 # Version: 2.0
 
 # IMPORTANTE: NO borrar los comentarios
@@ -28,6 +28,34 @@ def ej3():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
     
+    with open('stock.csv') as csvfile:
+        data = list(csv.DictReader(csvfile))
+
+        stock_tornillos_1 = int(data[0]['tornillos'])
+        stock_tornillos_2 = int(data[1]['tornillos'])
+        stock_tornillos_3 = int(data[2]['tornillos'])
+        stock_tornillos_4 = int(data[3]['tornillos'])
+        stock_tornillos_5 = int(data[4]['tornillos'])
+        stock_tornillos_6 = int(data[5]['tornillos'])
+        
+
+        sumatoria = []
+        sumatoria.append(stock_tornillos_1)
+        sumatoria.append(stock_tornillos_2)
+        sumatoria.append(stock_tornillos_3)
+        sumatoria.append(stock_tornillos_4)
+        sumatoria.append(stock_tornillos_5)
+        sumatoria.append(stock_tornillos_6)
+
+        suma = 0
+
+        for i in sumatoria:
+            suma += i
+
+        print('Total de Tornillos: ', suma)
+
+    csvfile.close()       
+    
 
 
 def ej4():
@@ -48,6 +76,20 @@ def ej4():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+    with open('propiedades.csv') as csvfile:
+        archivo = list(csv.DictReader(csvfile))
+
+        cantidad_2amb = 0
+        cantidad_3amb = 0
+
+        for i in archivo:
+            if i['ambientes'] == '2':
+                cantidad_2amb += 1
+            elif i['ambientes'] == '3':
+                cantidad_3amb += 1
+
+    print('Cantidad de departamentos de 2 ambientes: ', cantidad_2amb)
+    print('Cantidad de departamentos de 3 ambientes: ', cantidad_3amb)
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
